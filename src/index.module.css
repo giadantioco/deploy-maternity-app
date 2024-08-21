@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap");
+
+:root {
+  --white: #fff;
+  --blue: #192969;
+  --salmon: #ec715d;
+  --gray: #ced4da;
+  --black: #000;
+  --gray: #a0a0a0;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Syne", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: url("./assets/blue_mama.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 100dvh;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
