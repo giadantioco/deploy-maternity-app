@@ -2,6 +2,8 @@ import { useState } from "react";
 import Layout from "./components/Layout/Layout";
 import Form from "./components/Form/Form";
 import ProductList from "./components/ProductList/ProductList";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const initialState = [
   {
@@ -75,6 +77,22 @@ function App() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    if (
+      !input.category ||
+      !input.productName ||
+      !input.description ||
+      !input.price ||
+      !input.brand ||
+      !input.availability
+    ) {
+      toast.error("All fields must be filled!");
+    }
+
+    if (isNaN(input.price) || input.price.trim() === "") {
+      toast.error("Price must be a valid number!");
+      return;
+    }
+
     const id = self.crypto.randomUUID();
     const category = input.category;
     const productName = input.productName;
@@ -96,6 +114,7 @@ function App() {
     ]);
 
     setInput(initialInput);
+    toast.success("Product added successfully!");
   };
 
   /**
@@ -108,6 +127,7 @@ function App() {
     );
 
     setProducts(tmpProducts);
+    toast.success("Product deleted successfully!");
   };
 
   /**
@@ -130,6 +150,18 @@ function App() {
         filter={filter}
         handleFilter={handleFilter}
         handleDelete={handleDelete}
+      />
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
       />
     </Layout>
   );
