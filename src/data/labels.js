@@ -15,7 +15,7 @@ export const labels = {
   // filter
   filter: "Filter by category",
   // footer
-  footer: "© 2024 Maternity Products. All rights reserved",
+  footer: "NeoMum © Made with love for new mums 💙",
   // option values
   optCategory: "Select a category",
   optClothes: "Clothes",
