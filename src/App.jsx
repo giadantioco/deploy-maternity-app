@@ -86,6 +86,7 @@ function App() {
       !input.availability
     ) {
       toast.error("All fields must be filled!");
+      return;
     }
 
     if (isNaN(input.price) || input.price.trim() === "") {
