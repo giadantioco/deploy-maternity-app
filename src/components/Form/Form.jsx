@@ -10,8 +10,10 @@ function Form({ input, handleChange, handleSubmit }) {
 
   const onInputChange = (e) => {
     const { id, value } = e.target;
-    const capitalisedValue = capitalizeFirstLetter(value);
-    handleChange({ target: { id, value: capitalisedValue } });
+    const fieldsToCapitalize = ["productName", "description"];
+    const shouldCapitalize = fieldsToCapitalize.includes(id);
+    const newValue = shouldCapitalize ? capitalizeFirstLetter(value) : value;
+    handleChange({ target: { id, value: newValue } });
   };
 
   const isFormValid = () => {
