@@ -55,7 +55,6 @@ function App() {
     return "";
   };
 
-
   // Aggiorna lo stato input
 
   const handleChange = (e) => {
@@ -118,7 +117,7 @@ function App() {
 
   const handleDelete = (e) => {
     const tmpProducts = products.filter(
-      (product) => product.id !== e.target.id
+      (product) => product.id !== e.target.id,
     );
 
     setProducts(tmpProducts);

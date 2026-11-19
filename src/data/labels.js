@@ -1,6 +1,7 @@
 export const labels = {
   // header
-  maternityProducts: "Maternity Products",
+  maternityProducts: "NeoMum",
+  headline: "Your baby shopping checklist",
   //  form
   category: "Category:",
   productName: "Product Name:",

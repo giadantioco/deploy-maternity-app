@@ -9,3 +9,7 @@
   font-size: 32px;
   color: var(--blue);
 }
+
+.headline {
+  color: var(--salmon);
+}
