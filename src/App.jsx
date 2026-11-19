@@ -13,7 +13,9 @@ const initialState = [
     description: "0 to 1 month old body suit",
     price: "19.99",
     brand: "Asos",
-    availability: "Available",
+    priority: "essential",
+    source: "buy",
+    bought: false,
   },
   {
     id: self.crypto.randomUUID(),
@@ -22,7 +24,9 @@ const initialState = [
     description: "Prevent and reduce stretch marks during maternity",
     price: "14.99",
     brand: "Bio-Oil",
-    availability: "Available",
+    priority: "nice to have",
+    source: "gift",
+    bought: true,
   },
 ];
 
@@ -32,7 +36,8 @@ const initialInput = {
   description: "",
   price: "",
   brand: "",
-  availability: "",
+  priority: "",
+  source: "",
 };
 
 function App() {
@@ -78,7 +83,9 @@ function App() {
       !input.description ||
       !input.price ||
       !input.brand ||
-      !input.availability
+      !input.priority ||
+      !input.source ||
+      !input.bought
     ) {
       toast.error("All fields must be filled!");
       return;
@@ -95,7 +102,9 @@ function App() {
     const description = input.description;
     const price = formatPrice(input.price);
     const brand = input.brand;
-    const availability = input.availability;
+    const priority = input.priority;
+    const source = input.source;
+
     setProducts([
       ...products,
       {
@@ -105,7 +114,9 @@ function App() {
         description,
         price,
         brand,
-        availability,
+        priority,
+        source,
+        bought: false,
       },
     ]);
 
