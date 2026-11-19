@@ -46,6 +46,14 @@ function Form({ input, handleChange, handleSubmit }) {
         <option value="Toys">{labels.optToys}</option>
       </select>
 
+      <label>{labels.priority}</label>
+      <select id="priority" value={input.priority} onChange={onInputChange}>
+        <option value="">{labels.optPriority}</option>
+        <option value="essential">{labels.optEssential}</option>
+        <option value="useful">{labels.optUseful}</option>
+        <option value="nice">{labels.optNice}</option>
+      </select>
+
       <label>{labels.productName}</label>
       <input
         id="productName"
@@ -79,20 +87,15 @@ function Form({ input, handleChange, handleSubmit }) {
         onChange={onInputChange}
       />
 
-      <label>{labels.availability}</label>
-      <select
-        id="availability"
-        value={input.availability}
-        onChange={onInputChange}
-      >
-        <option value="">{labels.addAvailability}</option>
-        <option value="Available">{labels.optAvailable}</option>
-        <option value="Not Available">{labels.optNotAvailable}</option>
+      <label>{labels.source}</label>
+      <select id="source" value={input.source} onChange={onInputChange}>
+        <option value="">{labels.optSource}</option>
+        <option value="buy">{labels.optBuy}</option>
+        <option value="borrow">{labels.optBorrow}</option>
+        <option value="gift">{labels.optGift}</option>
       </select>
 
-      <button type="submit" >
-        {labels.submit}
-      </button>
+      <button type="submit">{labels.submit}</button>
     </form>
   );
 }

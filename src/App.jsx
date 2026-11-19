@@ -24,7 +24,7 @@ const initialState = [
     description: "Prevent and reduce stretch marks during maternity",
     price: "14.99",
     brand: "Bio-Oil",
-    priority: "nice to have",
+    priority: "nice",
     source: "gift",
     bought: true,
   },
@@ -84,8 +84,7 @@ function App() {
       !input.price ||
       !input.brand ||
       !input.priority ||
-      !input.source ||
-      !input.bought
+      !input.source
     ) {
       toast.error("All fields must be filled!");
       return;
