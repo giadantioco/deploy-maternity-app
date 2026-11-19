@@ -90,7 +90,7 @@ function Form({ input, handleChange, handleSubmit }) {
         <option value="Not Available">{labels.optNotAvailable}</option>
       </select>
 
-      <button type="submit" disabled={isSubmitDisabled}>
+      <button type="submit" >
         {labels.submit}
       </button>
     </form>

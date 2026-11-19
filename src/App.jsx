@@ -55,13 +55,11 @@ function App() {
     return "";
   };
 
-  /**
-   * Aggiorna lo stato input ogni volta che viene digitato qualcosa negli input della form
-   * @param {*} e
-   */
+
+  // Aggiorna lo stato input
+
   const handleChange = (e) => {
     const { id, value } = e.target;
-    const formattedValue = id === "price" ? formatPrice(value) : value;
     setInput((prevState) => {
       return {
         ...prevState,
@@ -70,10 +68,8 @@ function App() {
     });
   };
 
-  /**
-   * Crea un nuovo prodotto con i dati che vengono presi dagli input della form
-   * @param {*} e
-   */
+  //Crea un nuovo prodotto con i dati che vengono presi dagli input della form
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -118,10 +114,8 @@ function App() {
     toast.success("Product added successfully!");
   };
 
-  /**
-   * Cancella un articolo dalla lista degli articoli e aggiorna lo stato
-   * @param {*} e
-   */
+  // Cancella un articolo dalla lista degli articoli e aggiorna lo stato
+
   const handleDelete = (e) => {
     const tmpProducts = products.filter(
       (product) => product.id !== e.target.id
@@ -131,10 +125,8 @@ function App() {
     toast.success("Product deleted successfully!");
   };
 
-  /**
-   * Aggiorna lo stato che gestisce il filtering
-   * @param {*} e
-   */
+  //Aggiorna lo stato che gestisce il filtering
+
   const handleFilter = (e) => {
     setFilter(e.target.value);
   };
