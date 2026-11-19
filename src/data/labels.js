@@ -48,4 +48,11 @@ export const labels = {
   addDescription: "Add Description",
   addBrand: "Add Brand",
   addPrice: "Add Price",
+
+  //labels
+  priorityLabels: {
+    essential: "Essential",
+    useful: "Useful",
+    nice: "Nice to have",
+  },
 };
