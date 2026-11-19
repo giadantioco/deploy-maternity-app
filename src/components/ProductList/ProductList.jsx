@@ -14,7 +14,7 @@ function ProductList({ products, filter, handleFilter, handleDelete }) {
 
       <ul>
         {products
-          .filter((product) => product.category.includes(filter))
+          .filter((product) => product.category.toUpperCase().includes(filter.toUpperCase()))
           .map((product) => {
             return (
               <Product
